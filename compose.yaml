@@ -11,7 +11,7 @@ services:
       TZ: "${TZ:-Asia/Tokyo}"
       INTERFACE: "${INTERFACE:-eth0}"
     volumes:
-      - "${HOST_DATA_DIR:-./data}/config:/config"
+      - "${OPENVPN_CONFIG_DIR:-${HOST_DATA_DIR:-./data}/config}:/config"
     ports:
       - "${ADMIN_UI_PORT:-943}:943"
       - "${HTTPS_PORT:-9443}:9443"
@@ -20,4 +20,3 @@ services:
       driver: syslog
       options:
         tag: "openvpn"
-
