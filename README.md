@@ -2,6 +2,10 @@
 
 OpenVPN AS を独立リポジトリとして扱うための新しい正本候補です。管理者パスワードや永続データを repo 外に逃がし、repo 単独で起動できる形にしています。
 
+## 日本語メモ
+
+GitHub のコミット一覧が英語で分かりにくい場合は、[コミット履歴の日本語メモ](docs/COMMIT_HISTORY_JA.md) を見てください。
+
 ## 起動
 
 ```bash
@@ -48,4 +52,3 @@ Git に含めないもの:
 
 - 旧構成の external network / 固定 IP はベース compose から外しています
 - reverse proxy 連携が必要なら別 override file で追加する方針です
-
