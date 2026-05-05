@@ -15,6 +15,9 @@ GitHub のコミット一覧が英語で分かりにくい場合は、[コミッ
 - `INTERFACE` は VPN が使うホスト側ネットワーク名です。PC によって `eth0` ではなく `enp...` になることがあります
 - 親 repo からまとめて使う場合は、`stack.service.env.local` の `APP_OPENVPN__OPENVPN_ADMIN_PASSWORD` などを使います
 
+データ配置は旧コンテナと同じく `HOST_DATA_DIR` 直下を `/config` へマウントします。
+HDD移行で `openvpn` ディレクトリをそのまま使う場合は、`HOST_DATA_DIR=/path/to/openvpn` とします。
+
 ## 起動
 
 ```bash
@@ -41,7 +44,7 @@ Git に含めるもの:
 Git に含めないもの:
 
 - `.env.local`
-- `data/config/`
+- `data/`
 
 ## 初期化
 
