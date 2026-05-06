@@ -1,8 +1,9 @@
 data/*
 !data/.gitkeep
 !data/config/
+data/config/*
 !data/config/.gitkeep
 .env
 .env.local
+.env.local.*
 .DS_Store
-
