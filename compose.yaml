@@ -1,7 +1,7 @@
 services:
   openvpn-as:
     image: lscr.io/linuxserver/openvpn-as:latest
-    restart: unless-stopped
+    restart: "${RESTART_POLICY:-no}"
     cap_add:
       - NET_ADMIN
     privileged: true

@@ -12,6 +12,12 @@ docker compose --env-file .env.local up -d
 ./scripts/set-admin-password.sh
 ```
 
+既定では自動再起動しません。必要な期間だけ起動し、使い終わったら停止します。
+
+```bash
+docker compose --env-file .env.local stop
+```
+
 管理画面:
 
 - 管理者画面: `https://localhost:943`
@@ -22,6 +28,8 @@ docker compose --env-file .env.local up -d
 `.env.example` は公開用の見本です。実際の値は `.env.local` に書きます。
 
 - `HOST_DATA_DIR`: OpenVPN の設定を保存する場所です。
+- `RESTART_POLICY`: 既定は `no` です。常時運用する場合だけ
+  `unless-stopped` へ変更します。
 - `OPENVPN_ADMIN_PASSWORD`: 管理者 `admin` のパスワードです。必ず変更します。
 - `INTERFACE`: VPN が使うホスト側のネットワーク名です。パソコンによって変わります。
 - `APP_OPENVPN__...`: 親リポジトリからまとめて設定するときに使います。
